@@ -35,6 +35,6 @@ int Default::divide(int a, int b){
     return a / b;
 }
 
-//todo перегрузка
+//todo peregruzka
 
 
