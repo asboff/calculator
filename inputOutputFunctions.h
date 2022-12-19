@@ -1,0 +1,8 @@
+//
+// Created by USER on 19.12.2022.
+//
+
+#ifndef INPUTOUTPUTFUNCTIONS_H
+#define INPUTOUTPUTFUNCTIONS_H
+
+#endif //INPUTOUTPUTFUNCTIONS_H
