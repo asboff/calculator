@@ -1,8 +1,9 @@
 #include <iostream>
 #include <string>
-#include "Menu.h"
+#include "arithmeticAndLogicOperators.h"
+#include "mathFunctions.h"
 
 int main()
 {
-
+    std::cout << pow(4, 0.5);
 }

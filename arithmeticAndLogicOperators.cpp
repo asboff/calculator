@@ -51,10 +51,10 @@ int exclusiveOr (bool a, bool b){
 }
 
 int conjunctionNegation(bool a, bool b){
-    return ~(a & b);
+    return !(a & b);
 }
 
 int disjunctionNegation(bool a, bool b){
-    return ~(a | b);
+    return !(a | b);
 }
 
