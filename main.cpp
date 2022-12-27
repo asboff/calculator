@@ -5,5 +5,5 @@
 
 int main()
 {
-    std::cout << pow(4, 0.5);
+    std::cout << myPow(4, 0.5);
 }

@@ -1,15 +1,17 @@
 #include "arithmeticAndLogicOperators.h"
+#include "mathFunctions.h"
+#include <cmath>
 
 int absolute(int a){
     if (a >= 0){
         return a;
     }
-    return -a;
+    return (-1) * a;
 }
 
-//double sqrt(double a){
-//
-//}
+double sqrt(double a){
+    return myPow(a, 0.5);
+}
 
 double reciprocalFunction(double a){
     if (a == 0){
@@ -28,7 +30,7 @@ int factorial(unsigned int a){
     }
 }
 
-double pow(double a, int deg){
+double myPow(double a, int deg){
     if ((a != 0 && deg == 0) || a == 1){
         return 1;
     }
@@ -54,12 +56,34 @@ double pow(double a, int deg){
     return result;
 }
 
-double pow(double a, double deg){
-    double result = 1;
-    double adden = 1;
-    for (int i = 1; i < 23; i++){
-        adden *= (deg - i + 1) * (a - 1);
-        result += (adden / factorial(i));
-    }
-    return result;
+double myPow(double a, double deg){
+    return pow(a, deg);
 }
+
+double mySin(double a){
+    return sin(a);
+}
+
+double myCos(double a){
+    return cos(a);
+}
+
+double myTan(double a){
+    if (myCos(a) == 0){
+        throw 'Undefined';
+    }
+    return mySin(a) / myCos(a);
+}
+
+double mySec(double a){
+    return reciprocalFunction(myCos(a));
+}
+
+double myCsc(double a){
+    return reciprocalFunction(mySin(a));
+}
+
+double myCot(double a){
+    return reciprocalFunction(myTan(a));
+}
+
