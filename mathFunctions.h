@@ -1,14 +1,5 @@
-//
-// Created by USER on 19.12.2022.
-//
-
-#ifndef MATHFUNCTIONS_H
-#define MATHFUNCTIONS_H
-
-#endif //MATHFUNCTIONS_H
-
 int absolute(int);
-double sqrt(double);
+double mySqrt(double);
 double reciprocalFunction(double);
 int factorial(unsigned int);
 double myPow(double, int);
@@ -19,3 +10,34 @@ double myTan(double);
 double mySec(double);
 double myCsc(double);
 double myCot(double);
+double myAsin(double);
+double myAcos(double);
+double myAtan(double);
+double myAsec(double);
+double myAcsc(double);
+double myAcot(double);
+double mySh(double);
+double myCh(double);
+double myTh(double);
+double mySech(double);
+double myCsch(double);
+double myCoth(double);
+double myAsh(double);
+double myAch(double);
+double myAth(double);
+int myFloor(double);
+int myCeil(double);
+double myPi();
+double myE();
+double mySquare(double);
+double myMod(double, double);
+double my10Deg(double);
+double myExp(double, double);
+double myLg(double);
+double myLn(double);
+double myCube(double);
+double myCbrt(double);
+double myRoot(double, double);
+double my2deg(double);
+double myLog(double, double);
+double myEx(double);

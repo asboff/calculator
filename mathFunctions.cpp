@@ -9,7 +9,7 @@ int absolute(int a){
     return (-1) * a;
 }
 
-double sqrt(double a){
+double mySqrt(double a){
     return myPow(a, 0.5);
 }
 
@@ -70,7 +70,7 @@ double myCos(double a){
 
 double myTan(double a){
     if (myCos(a) == 0){
-        throw 'Undefined';
+        throw "Undefined";
     }
     return mySin(a) / myCos(a);
 }
@@ -87,3 +87,141 @@ double myCot(double a){
     return reciprocalFunction(myTan(a));
 }
 
+double myAsin(double a){
+    if (absolute(a) > 1){
+        throw "Undefined.";
+    }
+    return asin(a);
+}
+
+double myAcos(double a){
+    if (absolute(a) > 1){
+        throw "Undefined.";
+    }
+    return acos(a);
+}
+
+double myAtan(double a){
+    return atan(a);
+}
+
+double myAsec(double a){
+    return myAcos(reciprocalFunction(a));
+}
+
+double myAcsc(double a){
+    return myAsin(reciprocalFunction(a));
+}
+
+double myAcot(double a){
+    return myAtan(reciprocalFunction(a));
+}
+
+double mySh(double a){
+    return 0;
+    //todo
+}
+
+double myCh(double a){
+    return 0;
+    //todo
+}
+
+double myTh(double a){
+    return 0;
+    //todo
+}
+
+double mySech(double a){
+    return reciprocalFunction(myCh(a));
+}
+
+double myCsch(double a){
+    return reciprocalFunction(mySh(a));
+}
+
+double myCoth(double a){
+    return reciprocalFunction(myTh(a));
+}
+
+double myAsh(double a){
+    return asinh(a);
+}
+
+double myAch(double a){
+    return acosh(a);
+}
+
+double myAth(double a){
+    return atan(a);
+}
+
+int myFloor(double a){
+    if (a < 0){
+        return (a / 1) - 1;
+    }
+    return a / 1;
+}
+
+int myCeil(double a){
+    if (a > 0){
+        return (a / 1) + 1;
+    }
+    return a / 1;
+}
+
+double myPi(){
+    return M_PI;
+}
+
+double myE(){
+    return M_E;
+}
+
+double mySquare(double a){
+    return myPow(a, 2);
+}
+
+double myMod(double a, double b){
+    return a - (myFloor(a / b) * b);
+}
+
+double my10Deg(double a){
+    return myPow(10, a);
+}
+
+double myExp(double a, double deg){
+    return a * my10Deg(deg);
+}
+
+double myLg(double a){
+    return log10(a);
+}
+
+double myLn(double a){
+    return log(a);
+}
+
+double myCube(double a){
+    return myPow(a, 3);
+}
+
+double myCbrt(double a){
+    return myPow(a, 1 / 3);
+}
+
+double myRoot(double a, double b){
+    return myPow(a, reciprocalFunction(b));
+}
+
+double my2deg(double deg){
+    return pow(2, deg);
+}
+
+double myLog(double base, double a){
+    return myLn(a) / myLn(base);
+}
+
+double myEx(double a){
+    return myPow(myE(), a);
+}

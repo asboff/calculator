@@ -5,5 +5,5 @@
 
 int main()
 {
-    std::cout << myPow(4, 0.5);
+    std::cout << myE();
 }
