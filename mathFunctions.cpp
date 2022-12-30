@@ -117,21 +117,6 @@ double myAcot(double a){
     return myAtan(reciprocalFunction(a));
 }
 
-double mySh(double a){
-    return 0;
-    //todo
-}
-
-double myCh(double a){
-    return 0;
-    //todo
-}
-
-double myTh(double a){
-    return 0;
-    //todo
-}
-
 double mySech(double a){
     return reciprocalFunction(myCh(a));
 }
@@ -186,12 +171,12 @@ double myMod(double a, double b){
     return a - (myFloor(a / b) * b);
 }
 
-double my10Deg(double a){
+double myTenDeg(double a){
     return myPow(10, a);
 }
 
 double myExp(double a, double deg){
-    return a * my10Deg(deg);
+    return a * myTenDeg(deg);
 }
 
 double myLg(double a){
@@ -214,7 +199,7 @@ double myRoot(double a, double b){
     return myPow(a, reciprocalFunction(b));
 }
 
-double my2deg(double deg){
+double myTwoDeg(double deg){
     return pow(2, deg);
 }
 
@@ -224,4 +209,16 @@ double myLog(double base, double a){
 
 double myEx(double a){
     return myPow(myE(), a);
+}
+
+double mySh(double a){
+    return (myEx(a) - myEx(-a)) / 2;
+}
+
+double myCh(double a){
+    return (myEx(a) + myEx(-a)) / 2;
+}
+
+double myTh(double a){
+    return mySh(a) / myCh(a);
 }

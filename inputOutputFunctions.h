@@ -1,8 +1,7 @@
-//
-// Created by USER on 19.12.2022.
-//
+#include <string>
 
-#ifndef INPUTOUTPUTFUNCTIONS_H
-#define INPUTOUTPUTFUNCTIONS_H
-
-#endif //INPUTOUTPUTFUNCTIONS_H
+void calculator();
+void errorMessage();
+double zeroHandler(std::string);
+double unaryHandler(std::string, double);
+double unaryHandler(std::string, double, double);

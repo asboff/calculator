@@ -1,9 +1,7 @@
 #include <iostream>
-#include <string>
-#include "arithmeticAndLogicOperators.h"
-#include "mathFunctions.h"
+#include "inputOutputFunctions.h"
 
 int main()
 {
-    std::cout << myE();
+    calculator();
 }
