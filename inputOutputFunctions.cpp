@@ -1,24 +1,53 @@
 #include <iostream>
 #include <string>
+#include <vector>
 #include "inputOutputFunctions.h"
 #include "arithmeticAndLogicOperators.h"
 #include "mathFunctions.h"
 
+bool isNumber(std::string str){
+    if (str.find_first_not_of("0123456789") == -1){
+        return true;
+    }
+    return false;
+}
+
 
 void calculator(){
-    std::string a = " ";
-    std::string b = " ";
-    std::string c = " ";
+    std::string str;
+    std::vector<std::string> operands;
 
     std::cout << "You can read about the calculator at readme file." << std::endl;
     std::cout << "Enter the operation:";
-    std::cin >> a >> b >> c;
-
-    std::cout << a << " " << b << " " << c;
-
-    if (c == " "){
-        std::cout << "pon";
+    while(std::getline(std::cin, str, ' ')){
+        operands.push_back(str);
     }
+
+    if (operands.size() == 1){
+        std::string operation = operands[0];
+        std::cout << zeroHandler(operation);
+    } else if (operands.size() == 2){
+        std::string operation = operands[0];
+        if (isNumber(operands[1])){
+            double a = std::stod(operands[1]);
+            std::cout << unaryHandler(operation, a);
+        } else{
+            errorMessage();
+        }
+    } else if(operands.size() == 3){
+        std::string operation = operands[1];
+        if (isNumber(operands[0]) && isNumber(operands[2])){
+            double a = std::stod(operands[0]);
+            double b = std::stod(operands[2]);
+            std::cout << doubleHandler(operation, a, b);
+        } else{
+            errorMessage();
+        }
+    } else{
+        errorMessage();
+    }
+
+
 }
 
 void errorMessage(){
