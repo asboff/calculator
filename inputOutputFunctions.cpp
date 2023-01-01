@@ -5,222 +5,231 @@
 #include "arithmeticAndLogicOperators.h"
 #include "mathFunctions.h"
 
-bool isNumber(std::string str){
-    if (str.find_first_not_of("0123456789") == -1){
+bool isNumber(std::string str)
+{
+    if (str.find_first_not_of("0123456789") == -1) {
         return true;
     }
     return false;
 }
 
-
-void calculator(){
+void calculator()
+{
     std::string str;
     std::vector<std::string> operands;
 
     std::cout << "You can read about the calculator at readme file." << std::endl;
     std::cout << "Enter the operation:";
-    while(std::getline(std::cin, str, ' ')){
+    while (std::getline(std::cin, str, ' ')) {
         operands.push_back(str);
     }
 
-    if (operands.size() == 1){
+    if (operands.size() == 1) {
         std::string operation = operands[0];
         std::cout << zeroHandler(operation);
-    } else if (operands.size() == 2){
+    }
+    else if (operands.size() == 2) {
         std::string operation = operands[0];
-        if (isNumber(operands[1])){
+        if (isNumber(operands[1])) {
             double a = std::stod(operands[1]);
             std::cout << unaryHandler(operation, a);
-        } else{
+        }
+        else {
             errorMessage();
         }
-    } else if(operands.size() == 3){
+    }
+    else if (operands.size() == 3) {
         std::string operation = operands[1];
-        if (isNumber(operands[0]) && isNumber(operands[2])){
+        if (isNumber(operands[0]) && isNumber(operands[2])) {
             double a = std::stod(operands[0]);
             double b = std::stod(operands[2]);
             std::cout << doubleHandler(operation, a, b);
-        } else{
+        }
+        else {
             errorMessage();
         }
-    } else{
+    }
+    else {
         errorMessage();
     }
 
-
 }
 
-void errorMessage(){
+void errorMessage()
+{
     std::cout << "This expression can't be handled. If you believe, this is a mistake, contact me at "
                  "https://github.com/asboff/";
 }
 
-double zeroHandler(std::string operation){
-    if (operation == "pi"){
+double zeroHandler(std::string operation)
+{
+    if (operation == "pi") {
         return myPi();
     }
-    if (operation == "e"){
+    if (operation == "e") {
         return myE();
     }
     errorMessage();
 }
 
-double unaryHandler(std::string operation, double a){
-    if (operation == "+"){
+double unaryHandler(std::string operation, double a)
+{
+    if (operation == "+") {
         return unaryPlus(a);
     }
-    if (operation == "-"){
+    if (operation == "-") {
         return unaryMinus(a);
     }
-    if (operation == "--"){
+    if (operation == "--") {
         return negation(a);
     }
-    if (operation == "abs"){
+    if (operation == "abs") {
         return absolute(a);
     }
-    if (operation == "sqrt"){
+    if (operation == "sqrt") {
         return mySqrt(a);
     }
-    if (operation == "~/"){
+    if (operation == "~/") {
         return reciprocalFunction(a);
     }
-    if (operation == "fact"){
+    if (operation == "fact") {
         return factorial(a);
     }
-    if (operation == "sin"){
+    if (operation == "sin") {
         return mySin(a);
     }
-    if (operation == "cos"){
+    if (operation == "cos") {
         return myCos(a);
     }
-    if (operation == "tg"){
+    if (operation == "tg") {
         return myTan(a);
     }
-    if (operation == "sec"){
+    if (operation == "sec") {
         return mySec(a);
     }
-    if (operation == "csc"){
+    if (operation == "csc") {
         return myCsc(a);
     }
-    if (operation == "ctg"){
+    if (operation == "ctg") {
         return myCot(a);
     }
-    if (operation == "arcsin"){
+    if (operation == "arcsin") {
         return myAsin(a);
     }
-    if (operation == "arccos"){
+    if (operation == "arccos") {
         return myAcos(a);
     }
-    if (operation == "arctg"){
+    if (operation == "arctg") {
         return myAtan(a);
     }
-    if (operation == "arcsec"){
+    if (operation == "arcsec") {
         return myAsec(a);
     }
-    if (operation == "arccsc"){
+    if (operation == "arccsc") {
         return myAcsc(a);
     }
-    if (operation == "arcctg"){
+    if (operation == "arcctg") {
         return myAcot(a);
     }
-    if (operation == "sh"){
+    if (operation == "sh") {
         return mySh(a);
     }
-    if (operation == "ch"){
+    if (operation == "ch") {
         return myCh(a);
     }
-    if (operation == "th"){
+    if (operation == "th") {
         return myTh(a);
     }
-    if (operation == "sech"){
+    if (operation == "sech") {
         return mySech(a);
     }
-    if (operation == "csch"){
+    if (operation == "csch") {
         return myCsch(a);
     }
-    if (operation == "ctgh"){
+    if (operation == "ctgh") {
         return myCoth(a);
     }
-    if (operation == "arcsh"){
+    if (operation == "arcsh") {
         return myAsh(a);
     }
-    if (operation == "arcch"){
+    if (operation == "arcch") {
         return myAch(a);
     }
-    if (operation == "arcth"){
+    if (operation == "arcth") {
         return myAth(a);
     }
-    if (operation == "flr"){
+    if (operation == "flr") {
         return myFloor(a);
     }
-    if (operation == "ceil"){
+    if (operation == "ceil") {
         return myCeil(a);
     }
-    if (operation == "sqr"){
+    if (operation == "sqr") {
         return mySquare(a);
     }
-    if (operation == "10x"){
+    if (operation == "10x") {
         return myTenDeg(a);
     }
-    if (operation == "lg"){
+    if (operation == "lg") {
         return myLg(a);
     }
-    if (operation == "cube"){
+    if (operation == "cube") {
         return myCube(a);
     }
-    if (operation == "cbrt"){
+    if (operation == "cbrt") {
         return myCbrt(a);
     }
-    if (operation == "2x"){
+    if (operation == "2x") {
         return myTwoDeg(a);
     }
-    if (operation == "ex"){
+    if (operation == "ex") {
         return myEx(a);
     }
 
 }
 
-double doubleHandler(std::string operation, double a, double b){
-    if (operation == "+"){
+double doubleHandler(std::string operation, double a, double b)
+{
+    if (operation == "+") {
         return sum(a, b);
     }
-    if (operation == "-"){
+    if (operation == "-") {
         return sub(a, b);
     }
-    if (operation == "*"){
+    if (operation == "*") {
         return mult(a, b);
     }
-    if (operation == "/"){
+    if (operation == "/") {
         return division(a, b);
     }
-    if (operation == "mod"){
+    if (operation == "mod") {
         return myMod(a, b);
     }
-    if (operation == "and"){
+    if (operation == "and") {
         return conjunction(a, b);
     }
-    if (operation == "or"){
+    if (operation == "or") {
         return disjunction(a, b);
     }
-    if (operation == "xor"){
+    if (operation == "xor") {
         return exclusiveOr(a, b);
     }
-    if (operation == "nand"){
+    if (operation == "nand") {
         return conjunctionNegation(a, b);
     }
-    if (operation == "nor"){
+    if (operation == "nor") {
         return disjunctionNegation(a, b);
     }
-    if (operation == "pow"){
+    if (operation == "pow") {
         return myPow(a, b);
     }
-    if (operation == "exp"){
+    if (operation == "exp") {
         return myExp(a, b);
     }
-    if (operation == "root"){
+    if (operation == "root") {
         return myRoot(a, b);
     }
-    if (operation == "log"){
+    if (operation == "log") {
         return myLog(a, b);
     }
 
