@@ -7,7 +7,7 @@
 
 bool isNumber(std::string str)
 {
-    if (str.find_first_not_of("0123456789") == -1) {
+    if (str.find_first_not_of("0123456789.") == -1) {
         return true;
     }
     return false;
